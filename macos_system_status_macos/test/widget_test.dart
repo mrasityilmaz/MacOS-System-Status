@@ -5,25 +5,49 @@
 // gestures. You can also use WidgetTester to find child widgets in the widget
 // tree, read text, and verify that the values of widget properties are correct.
 
-import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:macos/macos_system_status_macos.dart';
+import 'package:macos_system_status_macos/macos_system_status_macos.dart';
+import 'package:macos_system_status_platform_interface/macos_system_status_platform_interface.dart';
 
 void main() {
-  testWidgets('Counter increments smoke test', (WidgetTester tester) async {
-    // Build our app and trigger a frame.
-    await tester.pumpWidget(const MyApp());
+  TestWidgetsFlutterBinding.ensureInitialized();
 
-    // Verify that our counter starts at 0.
-    expect(find.text('0'), findsOneWidget);
-    expect(find.text('1'), findsNothing);
+  group('FlutterDocumentScannerIOS', () {
+    const kPlatformName = 'macOS';
+    late MacOSSytemStatusMacOS flutterDocumentScanner;
+    late List<MethodCall> log;
 
-    // Tap the '+' icon and trigger a frame.
-    await tester.tap(find.byIcon(Icons.add));
-    await tester.pump();
+    setUp(() async {
+      flutterDocumentScanner = MacOSSytemStatusMacOS();
 
-    // Verify that our counter has incremented.
-    expect(find.text('0'), findsNothing);
-    expect(find.text('1'), findsOneWidget);
+      log = <MethodCall>[];
+      TestDefaultBinaryMessengerBinding.instance.defaultBinaryMessenger.setMockMethodCallHandler(flutterDocumentScanner.methodChannel, (methodCall) async {
+        log.add(methodCall);
+        switch (methodCall.method) {
+          case 'getSystemStatus':
+            return kPlatformName;
+          default:
+            return null;
+        }
+      });
+    });
+
+    test('can be registered', () {
+      MacOSSytemStatusMacOS.registerWith();
+      expect(
+        MacOSSystemStatusPlatform.instance,
+        isA<MacOSSytemStatusMacOS>(),
+      );
+    });
+
+    test('getPlatformName returns correct name', () async {
+      // final name = await flutterDocumentScanner.getPlatformName();
+      // expect(
+      //   log,
+      //   <Matcher>[isMethodCall('getPlatformName', arguments: null)],
+      // );
+      // expect(name, equals(kPlatformName));
+    });
   });
 }

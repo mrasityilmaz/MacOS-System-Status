@@ -2,6 +2,8 @@
 // license that can be found in the LICENSE file or at
 // https://opensource.org/licenses/MIT.
 
+import 'dart:convert';
+
 import 'package:flutter/foundation.dart' show debugPrint, visibleForTesting;
 import 'package:flutter/services.dart';
 import 'package:macos_system_status_platform_interface/macos_system_status_platform_interface.dart';
@@ -12,14 +14,15 @@ class MethodChannelMacOSSytemStatus extends MacOSSystemStatusPlatform {
   /// The method channel used to interact with the native platform.
   @visibleForTesting
   final methodChannel = const MethodChannel('macos_system_status');
-
   @override
   Future<SystemStatusModel?> getSystemStatus({Set<SystemStatusTypeEnum>? systemStatusTypes}) async {
     try {
-      final SystemStatusModel? systemStatusModel = await methodChannel.invokeMethod<SystemStatusModel?>(
-        'methodName',
-        <Object, Object>{},
-      );
+      final SystemStatusModel? systemStatusModel = await methodChannel.invokeMethod<String?>('getSystemStatus', {"types": systemStatusTypes?.map((e) => e.name).toList()}).then((stringValue) {
+        if (stringValue != null) {
+          return SystemStatusModel.fromJson(json.decode(stringValue));
+        }
+        return null;
+      });
 
       if (systemStatusModel != null) {
         return systemStatusModel;

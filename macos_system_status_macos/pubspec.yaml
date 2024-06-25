@@ -1,7 +1,6 @@
 name: macos_system_status_macos
-description: "A new Flutter project."
-# The following line prevents the package from being accidentally published to
-# pub.dev using `flutter pub publish`. This is preferred for private packages.
+description: MacOS implementation of the macos_system_status plugin
+repository: https://github.com/mrasityilmaz/MacOS-System-Status/tree/main/macos_system_status_macos
 publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 
 version: 1.0.0+1
@@ -9,25 +8,34 @@ version: 1.0.0+1
 environment:
   sdk: '>=3.5.0-218.0.dev <4.0.0'
 
+
+flutter:
+  plugin:
+    implements: macos_system_status
+    platforms:
+      macos:
+        pluginClass: MacOSSystemStatusPlugin
+        dartPluginClass: MacOSSytemStatusMacOS
+
+
 dependencies:
   flutter:
     sdk: flutter
-
-
-  # The following adds the Cupertino Icons font to your application.
-  # Use with the CupertinoIcons class for iOS style icons.
+  
   cupertino_icons: ^1.0.8
-
+  macos_system_status_platform_interface: 
+    path : '../macos_system_status_platform_interface'
 
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
 
-  # The "flutter_lints" package below contains a set of recommended lints to
-  # encourage good coding practices. The lint set provided by the package is
-  # activated in the `analysis_options.yaml` file located at the root of your
-  # package. See that file for information about deactivating specific lint
-  # rules and activating additional ones.
   flutter_lints: ^4.0.0
+  very_good_analysis: ^3.0.1
+  plugin_platform_interface: ^2.0.0
+
+
+
+
 
