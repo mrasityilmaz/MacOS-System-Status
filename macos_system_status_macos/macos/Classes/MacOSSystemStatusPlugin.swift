@@ -1,13 +1,13 @@
 
 
-import Flutter
-import UIKit
+import FlutterMacOS
+
 
 
 
 public class MacOSSystemStatusPlugin: NSObject, FlutterPlugin {
     public static func register(with registrar: FlutterPluginRegistrar) {
-        let channel = FlutterMethodChannel(name: "macos_system_status_macos", binaryMessenger: registrar.messenger())
+        let channel = FlutterMethodChannel(name: "macos_system_status_macos", binaryMessenger: registrar.messenger)
         let instance = MacOSSystemStatusPlugin()
         registrar.addMethodCallDelegate(instance, channel: channel)
     }
