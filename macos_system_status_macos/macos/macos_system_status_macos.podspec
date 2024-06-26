@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
 	s.source           = { :git => 'https://github.com/mrasityilmaz/MacOS-System-Status.git',
 	                       :tag => s.version.to_s }
 		   
-                    s.source_files  = 'Sources/**/*.swift'
+                    s.source_files  = 'Sources/**/*'
 	
 	
                   
