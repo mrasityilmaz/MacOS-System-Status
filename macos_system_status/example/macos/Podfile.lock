@@ -1,0 +1,22 @@
+PODS:
+  - FlutterMacOS (1.0.0)
+  - macos_system_status_macos (1.0.2):
+    - FlutterMacOS
+
+DEPENDENCIES:
+  - FlutterMacOS (from `Flutter/ephemeral`)
+  - macos_system_status_macos (from `Flutter/ephemeral/.symlinks/plugins/macos_system_status_macos/macos`)
+
+EXTERNAL SOURCES:
+  FlutterMacOS:
+    :path: Flutter/ephemeral
+  macos_system_status_macos:
+    :path: Flutter/ephemeral/.symlinks/plugins/macos_system_status_macos/macos
+
+SPEC CHECKSUMS:
+  FlutterMacOS: 8f6f14fa908a6fb3fba0cd85dbd81ec4b251fb24
+  macos_system_status_macos: ca345db40e9b938de5d2fa17c0615d8a78749151
+
+PODFILE CHECKSUM: 28f2999264254af5ab370768b8d2ff31450a43e0
+
+COCOAPODS: 1.15.2

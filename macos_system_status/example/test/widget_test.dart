@@ -12,11 +12,10 @@ void main() {
   TestWidgetsFlutterBinding.ensureInitialized();
 
   group('MacOSSytemStatusMacOS', () {
-    late MacOSSytemStatusMacOS macOSSytemStatus;
+    late MacOSSystemStatusPlatform macOSSytemStatus;
 
     setUp(() async {
-      macOSSytemStatus = MacOSSytemStatusMacOS();
-      MacOSSytemStatusMacOS.registerWith();
+      macOSSytemStatus = MacOSSystemStatusPlatform.instance;
     });
 
     test('can be registered', () {
