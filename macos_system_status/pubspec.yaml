@@ -11,13 +11,6 @@ environment:
 
 
 
-flutter:
-  plugin:
-    platforms: 
-      macos:
-        default_package: macos_system_status_macos
-
-
 dependencies:
   flutter:
     sdk: flutter
@@ -36,3 +29,11 @@ dev_dependencies:
   very_good_analysis: ^3.0.1
   plugin_platform_interface: ^2.0.0
   mocktail: ^1.0.4
+
+
+
+flutter:
+  plugin:
+    platforms: 
+      macos:
+        default_package: macos_system_status_macos
