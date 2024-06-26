@@ -1,6 +1,6 @@
 name: macos_system_status
 description: MacOS System Status Plugin
-repository: https://github.com/mrasityilmaz/MacOS-System-Status/tree/main/macos_system_status
+repository: https://github.com/mrasityilmaz/MacOS-System-Status
 version: 1.0.0
 publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 
