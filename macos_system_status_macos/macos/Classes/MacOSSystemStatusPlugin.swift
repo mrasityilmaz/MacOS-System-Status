@@ -1,9 +1,5 @@
-
-
 import FlutterMacOS
-
-
-
+import Cocoa
 
 public class MacOSSystemStatusPlugin: NSObject, FlutterPlugin {
     public static func register(with registrar: FlutterPluginRegistrar) {

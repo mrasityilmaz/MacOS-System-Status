@@ -1,12 +1,11 @@
 name: macos_system_status_platform_interface
 description: A common platform interface for the macos_system_status plugin.
 repository: https://github.com/mrasityilmaz/MacOS-System-Status/tree/main/macos_system_status_platform_interface
-
+version: 1.0.0
 # The following line prevents the package from being accidentally published to
 # pub.dev using `flutter pub publish`. This is preferred for private packages.
 publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 
-version: 1.0.0+1
 
 environment:
   sdk: '>=3.5.0-218.0.dev <4.0.0'

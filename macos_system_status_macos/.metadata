@@ -7,7 +7,7 @@ version:
   revision: "c246ecdf8e8d564410698e86cc07e853269ebab8"
   channel: "master"
 
-project_type: app
+project_type: plugin
 
 # Tracks metadata for the flutter migrate command
 migration:
@@ -15,22 +15,7 @@ migration:
     - platform: root
       create_revision: c246ecdf8e8d564410698e86cc07e853269ebab8
       base_revision: c246ecdf8e8d564410698e86cc07e853269ebab8
-    - platform: android
-      create_revision: c246ecdf8e8d564410698e86cc07e853269ebab8
-      base_revision: c246ecdf8e8d564410698e86cc07e853269ebab8
-    - platform: ios
-      create_revision: c246ecdf8e8d564410698e86cc07e853269ebab8
-      base_revision: c246ecdf8e8d564410698e86cc07e853269ebab8
-    - platform: linux
-      create_revision: c246ecdf8e8d564410698e86cc07e853269ebab8
-      base_revision: c246ecdf8e8d564410698e86cc07e853269ebab8
     - platform: macos
-      create_revision: c246ecdf8e8d564410698e86cc07e853269ebab8
-      base_revision: c246ecdf8e8d564410698e86cc07e853269ebab8
-    - platform: web
-      create_revision: c246ecdf8e8d564410698e86cc07e853269ebab8
-      base_revision: c246ecdf8e8d564410698e86cc07e853269ebab8
-    - platform: windows
       create_revision: c246ecdf8e8d564410698e86cc07e853269ebab8
       base_revision: c246ecdf8e8d564410698e86cc07e853269ebab8
 
