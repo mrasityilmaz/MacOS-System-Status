@@ -3,7 +3,7 @@
 #
 Pod::Spec.new do |s|
 	s.name             = 'macos_system_status_macos'
-	s.version          = '1.0.1'
+	s.version          = '1.0.2'
 	s.summary          = 'An MacOS implementation of the macos_system_status plugin.'
 	s.description      = <<-DESC
 	MacOS System Status 
