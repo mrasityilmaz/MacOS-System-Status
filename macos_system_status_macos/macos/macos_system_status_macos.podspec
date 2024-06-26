@@ -15,7 +15,7 @@ Pod::Spec.new do |s|
 	s.author           = { 'Muhammed Raşit Yılmaz' => 'yilmazrasitt@gmail.com' }
 	s.source           = { :git => 'https://github.com/mrasityilmaz/MacOS-System-Status.git',
 	                       :tag => s.version.to_s }
-  s.source_files = 'macos_system_status_macos/macos/Classes/src/**/*.swift'
+  s.source_files = 'macos_system_status_macos/macos/**/*.swift'
   s.dependency 'FlutterMacOS'
 
   s.platform = :osx, '10.14.6'
